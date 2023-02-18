@@ -14,7 +14,9 @@ target_sources(MandelbrotGUI PRIVATE
 check_language(CUDA)
 if(CMAKE_CUDA_COMPILER)
 	enable_language(CUDA)
-	target_sources(MandelbrotGUI PRIVATE "mandelbrot.cu")
+	target_sources(MandelbrotGUI PRIVATE
+		"mandelbrot.cu"
+		"mandelbrot_gpu.h")
 endif()
 
 find_package(OpenMP)
